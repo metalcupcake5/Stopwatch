@@ -17,8 +17,6 @@ class MainActivity : AppCompatActivity() {
         var pausedTime = 0L
 
         button_main_start.setOnClickListener {
-            Log.v(TAG, "chonometer: ${chronometer_main_timer.base}")
-            Log.v(TAG, "System: ${SystemClock.elapsedRealtime()}")
             if (pausedTime > 0) chronometer_main_timer.base += SystemClock.elapsedRealtime() - pausedTime else chronometer_main_timer.base = SystemClock.elapsedRealtime()
             chronometer_main_timer.start()
         }
